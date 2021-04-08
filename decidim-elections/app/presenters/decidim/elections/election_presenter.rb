@@ -41,7 +41,7 @@ module Decidim
       end
 
       def total_blank_votes
-        @total_blank_votes ||= (election.results.blank_question.sum(&:votes_count) / questions_count).round
+        @total_blank_votes ||= (election.results.blank_answer.sum(&:votes_count) / questions_count).round
       end
 
       def total_null_votes

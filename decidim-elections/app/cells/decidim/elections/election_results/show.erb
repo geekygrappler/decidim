@@ -31,7 +31,7 @@
               </div>
             <% end %>
 
-            <% if question.results.blank_question.any? %>
+            <% if question.results.blank_answer.any? %>
               <%= render view: :blank_votes, locals: { question: question } %>
             <% end %>
           </div>
