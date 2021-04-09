@@ -351,8 +351,7 @@ en:
       conference_venues: Conference Venues
       content_blocks:
         upcoming_events:
-          name: Upcoming events
-          upcoming_events: Upcoming meetings
+          name: Upcoming meetings
           view_all_events: View all
       directory:
         meetings:
