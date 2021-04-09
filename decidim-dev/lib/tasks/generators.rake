@@ -29,7 +29,9 @@ namespace :decidim do
       "../..",
       "--recreate_db",
       "--skip_gemfile",
-      "--demo"
+      "--demo",
+      "--force_ssl",
+      "false"
     )
   end
 
