@@ -33,15 +33,15 @@ module Decidim
       end
 
       def total_votes
-        @total_votes ||= election.results.total_election.sum(&:votes_count)
+        @total_votes ||= election.results.total_ballots.sum(&:votes_count)
       end
 
       def total_valid_votes
-        @total_valid_votes ||= election.results.valid_answer.sum(&:votes_count) / answers_count
+        @total_valid_votes ||= election.results.valid_answers.sum(&:votes_count) / answers_count
       end
 
       def total_blank_votes
-        @total_blank_votes ||= (election.results.blank_answer.sum(&:votes_count) / questions_count).round
+        @total_blank_votes ||= election.results.blank_ballots.sum(&:votes_count)
       end
 
       def total_null_votes
