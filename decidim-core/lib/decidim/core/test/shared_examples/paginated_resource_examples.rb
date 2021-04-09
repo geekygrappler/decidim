@@ -20,7 +20,15 @@ shared_examples "a paginated resource" do
       click_link "50"
     end
 
-    expect(page).to have_css(resource_selector, count: collection_size)
-    expect(page).to have_no_css(".pagination")
+
+    3.times do # wait for the ajax call to finish
+      sleep(1)
+      expect(page).to have_css(resource_selector, count: collection_size)
+      expect(page).to have_no_css(".pagination")
+      break
+    rescue e
+      # ignore and loop again if ajax content is still not there
+      nil
+    end
   end
 end
